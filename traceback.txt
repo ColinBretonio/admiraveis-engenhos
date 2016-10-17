@@ -1,0 +1,32 @@
+python -m urubu build
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/runpy.py", line 162, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/usr/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/usr/local/lib/python2.7/dist-packages/urubu/__main__.py", line 20, in <module>
+    main.main()
+  File "/usr/local/lib/python2.7/dist-packages/urubu/main.py", line 52, in main
+    project.build()
+  File "/usr/local/lib/python2.7/dist-packages/urubu/project.py", line 489, in build
+    proj.make_site()
+  File "/usr/local/lib/python2.7/dist-packages/urubu/project.py", line 470, in make_site
+    self.process_content()
+  File "/usr/local/lib/python2.7/dist-packages/urubu/project.py", line 475, in process_content
+    p = processors.ContentProcessor(sitedir, project=self)
+  File "/usr/local/lib/python2.7/dist-packages/urubu/processors.py", line 74, in __init__
+    extension_configs=extension_configs)
+  File "/usr/local/lib/python2.7/dist-packages/markdown/__init__.py", line 134, in __init__
+    configs=kwargs.get('extension_configs', {}))
+  File "/usr/local/lib/python2.7/dist-packages/markdown/__init__.py", line 160, in registerExtensions
+    ext = self.build_extension(ext, configs.get(ext, []))
+  File "/usr/local/lib/python2.7/dist-packages/markdown/__init__.py", line 207, in build_extension
+    return module.makeExtension(configs.items())
+  File "/usr/local/lib/python2.7/dist-packages/markdown/extensions/codehilite.py", line 225, in makeExtension
+    return CodeHiliteExtension(configs=configs)
+  File "/usr/local/lib/python2.7/dist-packages/markdown/extensions/codehilite.py", line 213, in __init__
+    self.setConfig(key, value)
+  File "/usr/local/lib/python2.7/dist-packages/markdown/extensions/__init__.py", line 34, in setConfig
+    self.config[key][0] = value
+KeyError: u'linenums'
+make: *** [build] Error 1
